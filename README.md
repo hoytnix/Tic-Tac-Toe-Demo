@@ -63,4 +63,4 @@ Feel free to submit issues, fork the repository, and create pull requests for an
 
 ## Version
 
-Current version: 0.0.1
+Current version: 0.0.2
