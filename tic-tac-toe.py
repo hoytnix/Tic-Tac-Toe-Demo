@@ -1,4 +1,18 @@
 import os
+import time
+
+def show_title_screen():
+	print('''
+	╔══════════════════════════════════════╗
+	║     ▀█▀ █ █▀▀   ▀█▀ ▄▀█ █▀▀          ║
+	║      █  █ █▄▄    █  █▀█ █▄▄          ║
+	║                                      ║
+	║      ▀█▀ █▀█ █▀▀  █▀▄ █▀▀ █▀▄▀█ █▀█  ║
+	║       █  █▄█ ██▄  █▄▀ ██▄ █ ▀ █ █▄█  ║
+	╚══════════════════════════════════════╝
+	           Press Enter to start
+	''')
+	input()
 
 def clear_screen():
 	os.system('cls' if os.name == 'nt' else 'clear')
@@ -29,6 +43,8 @@ def check_winner(board):
 	return None
 
 def main():
+	clear_screen()
+	show_title_screen()
 	board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 	player = 'X'
 
