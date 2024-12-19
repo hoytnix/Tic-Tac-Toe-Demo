@@ -13,23 +13,23 @@ def print_board(board):
 def check_winner(board):
 	# Check rows
 	for i in range(0, 9, 3):
-		if board[i] == board[i+1] == board[i+2] != ' ':
+		if board[i] == board[i+1] == board[i+2] and board[i] in ['X', 'O']:
 			return board[i]
 	# Check columns
 	for i in range(3):
-		if board[i] == board[i+3] == board[i+6] != ' ':
+		if board[i] == board[i+3] == board[i+6] and board[i] in ['X', 'O']:
 			return board[i]
 	# Check diagonals
-	if board[0] == board[4] == board[8] != ' ':
+	if board[0] == board[4] == board[8] and board[0] in ['X', 'O']:
 		return board[0]
-	if board[2] == board[4] == board[6] != ' ':
+	if board[2] == board[4] == board[6] and board[2] in ['X', 'O']:
 		return board[2]
-	if ' ' not in board:
+	if all(cell in ['X', 'O'] for cell in board):
 		return 'Tie'
 	return None
 
 def main():
-	board = [' '] * 9
+	board = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 	player = 'X'
 
 	while True:
@@ -40,7 +40,7 @@ def main():
 		while True:
 			try:
 				position = int(input('Enter position (1-9): ')) - 1
-				if 0 <= position <= 8 and board[position] == ' ':
+				if 0 <= position <= 8 and board[position] not in ['X', 'O']:
 					break
 				print('Invalid move. Try again.')
 			except ValueError:
